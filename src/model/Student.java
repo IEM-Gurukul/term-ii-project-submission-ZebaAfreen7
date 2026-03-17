@@ -1,19 +1,15 @@
 package model;
 
-public class Student {
-     private int id;
-    private String name;
+public class Student extends Person {
+
+    private int id;
 
     public Student(int id, String name) {
+        super(name); // calls Person constructor
         this.id = id;
-        this.name = name;
     }
 
     public int getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
     }
 }
