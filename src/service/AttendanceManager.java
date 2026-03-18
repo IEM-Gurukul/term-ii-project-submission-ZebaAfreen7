@@ -38,7 +38,7 @@ public class AttendanceManager {
 
         for (AttendanceRecord r : records) {
             if (r.getStudentId() == studentId) {
-                System.out.println(r.getDate() + " : " + (r.isPresent() ? "Present" : "Absent"));
+                System.out.println(r);
             }
         }
     }

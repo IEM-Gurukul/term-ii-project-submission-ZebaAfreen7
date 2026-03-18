@@ -25,4 +25,10 @@ public class AttendanceRecord {
     public boolean isPresent() {
         return isPresent;
     }
+
+     @Override
+    public String toString() {
+        return "Student ID: " + studentId + ", Date: " + date + ", " +
+               (isPresent ? "Present" : "Absent");
+    }
 }
