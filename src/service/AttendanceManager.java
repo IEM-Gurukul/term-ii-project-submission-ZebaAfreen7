@@ -23,4 +23,13 @@ public class AttendanceManager {
             System.out.println(s.getId() + " - " + s.getName());
         }
     }
+
+    public void viewAttendance(int studentId) {
+        System.out.println("Attendance for student ID: " + studentId);
+        for (AttendanceRecord r : records) {
+            if (r.getStudentId() == studentId) {
+                System.out.println(r.getDate() + " : " + (r.isPresent() ? "Present" : "Absent"));
+            }
+        }
+    }
 }
