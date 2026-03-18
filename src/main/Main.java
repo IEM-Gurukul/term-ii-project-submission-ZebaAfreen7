@@ -20,6 +20,10 @@ public class Main {
         manager.markAttendance(1, "2026-03-18", true);
         manager.markAttendance(2, "2026-03-18", false);
 
+        // Save and load
+        manager.saveToFile("attendance.txt");
+        manager.loadFromFile("attendance.txt");
+
         // View students
         System.out.println("\nStudents:");
         manager.viewStudents();

@@ -1,16 +1,19 @@
 package model;
 
 public class AttendanceRecord {
+
     private int studentId;
     private String date;
     private boolean isPresent;
 
+    // Constructor
     public AttendanceRecord(int studentId, String date, boolean isPresent) {
         this.studentId = studentId;
         this.date = date;
         this.isPresent = isPresent;
     }
 
+    // Getters
     public int getStudentId() {
         return studentId;
     }
