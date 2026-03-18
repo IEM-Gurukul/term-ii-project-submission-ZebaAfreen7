@@ -14,8 +14,25 @@ public class AttendanceManager {
     }
 
     public void markAttendance(int studentId, String date, boolean isPresent) {
+        if (!studentExists(studentId)) {
+            System.out.println("Error: Student ID " + studentId + " not found!");
+            return;
+        }
         AttendanceRecord record = new AttendanceRecord(studentId, date, isPresent);
         records.add(record);
+    }
+
+    public void viewAttendance(int studentId) {
+        if (!studentExists(studentId)) {
+            System.out.println("Error: Student ID " + studentId + " not found!");
+            return;
+        }
+        System.out.println("Attendance for student ID: " + studentId);
+        for (AttendanceRecord r : records) {
+            if (r.getStudentId() == studentId) {
+                System.out.println(r.getDate() + " : " + (r.isPresent() ? "Present" : "Absent"));
+            }
+        }
     }
 
     public void viewStudents() {
@@ -24,12 +41,10 @@ public class AttendanceManager {
         }
     }
 
-    public void viewAttendance(int studentId) {
-        System.out.println("Attendance for student ID: " + studentId);
-        for (AttendanceRecord r : records) {
-            if (r.getStudentId() == studentId) {
-                System.out.println(r.getDate() + " : " + (r.isPresent() ? "Present" : "Absent"));
-            }
+    private boolean studentExists(int studentId) {
+        for (Student s : students) {
+            if (s.getId() == studentId) return true;
         }
+        return false;
     }
 }
